@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  get 'demo/index'
+  #get 'demo/index'
+
+  # You can have the root of your site routed with "root"
+  root 'demo#index'
+
+  #default route should go at bottom if using - not best practice currently
+  match ':controller(/:action(/:id(.:format)))', :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
